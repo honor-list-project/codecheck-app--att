@@ -1,7 +1,11 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/cadastro.dart';
 import 'package:flutter_application_1/home.dart';
+import 'package:flutter_application_1/homeUsers.dart';
+import 'package:flutter_application_1/login.dart';
 import 'package:flutter_application_1/main.dart';
+import 'package:flutter_application_1/settings.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -17,7 +21,12 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(const Duration(seconds: 3), (){
       Navigator.pushReplacement(
         context, MaterialPageRoute(
-          builder: (context)=>Home()));
+          // builder: (context)=> const Login()));
+          // builder: (context)=> const Cadastro()));
+          // builder: (context)=> const HomeUsers()));
+          builder: (context)=> const Settings()));
+
+
     });
     
   }

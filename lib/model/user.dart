@@ -1,37 +1,37 @@
 import 'package:flutter/material.dart';
 
 class User {
-  String? name;
+  String? nome;
   String? email;
-  String? senha;
+  String? password;
   String? cpf;
-  String? fone;
+  String? telefone;
 
-  User({this.name, this.email, this.senha, this.cpf, this.fone});
+  User({this.nome, this.email, this.password, this.cpf, this.telefone});
 
   User.fromJson(Map<String, dynamic> json) {
-    name = json['name'];
+    nome = json['nome'];
     email = json['email'];
-    senha = json['senha'];
+    password = json['password'];
     cpf = json['cpf'];
-    fone = json['fone'];
+    telefone = json['telefone'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['name'] = this.name;
+    data['nome'] = this.nome;
     data['email'] = this.email;
-    data['senha'] = this.senha;
+    data['password'] = this.password;
     data['cpf'] = this.cpf;
-    data['fone'] = this.fone;
+    data['telefone'] = this.telefone;
     return data;
   }
 
-  String toString(){
-    return "Nome: ${this.name}"+ "\n Email: ${this.email}"
-    + "\n Senha: ${this.senha}"
-    + "\n CPF: ${this.cpf}"
-    + "\n Telefone: ${this.fone}";
+  String toString() {
+    return "Nome: ${this.nome}" +
+        "\n Email: ${this.email}" +
+        "\n password: ${this.password}" +
+        "\n CPF: ${this.cpf}" +
+        "\n Teletelefone: ${this.telefone}";
   }
-
 }

@@ -3,7 +3,7 @@ import 'package:flutter_application_1/cadastro.dart';
 import 'package:flutter_application_1/geolocaliza.dart';
 import 'package:flutter_application_1/home.dart';
 import 'package:flutter_application_1/splash.dart';
-import 'package:flutter_application_1/usuarios.dart';
+import 'package:flutter_application_1/homeUsers.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Cadastro(),
+      home: SplashScreen(),
     );
   }
 }

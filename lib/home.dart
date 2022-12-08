@@ -15,10 +15,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
-    TextEditingController _controllerName = TextEditingController();
-      TextEditingController _controllerSenha = TextEditingController();
-
+  TextEditingController _controllerName = TextEditingController();
+  TextEditingController _controllerSenha = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -126,7 +124,7 @@ class _HomeState extends State<Home> {
                           color: Colors.white,
                         ),
                         onPressed: () {
-                        _fazerLogin();
+                          _fazerLogin();
                         },
                       ),
                     ),
@@ -143,11 +141,16 @@ class _HomeState extends State<Home> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          Text(
-                            ' Cadastre-se agora!',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xFF0D25A1),
+                          TextButton(
+                            onPressed: () {
+                              
+                            },
+                            child: Text(
+                              'Cadastre-se agora!',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF0D25A1),
+                              ),
                             ),
                           )
                         ],
@@ -161,28 +164,26 @@ class _HomeState extends State<Home> {
         ),
       ),
     );
-   
-  } 
-  void _fazerLogin() async{
-      String nameForm = this._controllerName.text;
-      String senhaForm = this._controllerSenha.text;
-     
+  }
 
-     User savedUser = await _getsavedUser();
-     print(savedUser);
-     if(nameForm == savedUser.name && senhaForm == savedUser.senha){
+  void _fazerLogin() async {
+    String nameForm = this._controllerName.text;
+    String senhaForm = this._controllerSenha.text;
+
+    User savedUser = await _getsavedUser();
+    print(savedUser);
+    if (nameForm == savedUser.nome && senhaForm == savedUser.password) {
       print("Login efetuado com sucesso");
-     }
-     
     }
-   Future<User> _getsavedUser() async{
+  }
+
+  Future<User> _getsavedUser() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? jsonUser = prefs.getString(PreferencesKeys.activeUser);
     print(jsonUser);
 
-
-    Map<String,dynamic> mapUser = json.decode(jsonUser!);
+    Map<String, dynamic> mapUser = json.decode(jsonUser!);
     User user = User.fromJson(mapUser);
     return user;
-   }
+  }
 }
