@@ -11,23 +11,18 @@ class qrcode extends StatefulWidget {
 }
 
 class _qrcodeState extends State<qrcode> {
+  String ticket = '';
 
-String ticket = '';
-
-readQRCode() async{
-  String code = await FlutterBarcodeScanner.scanBarcode(
-    "#FFFFFF", 
-    "Cancelar", 
-    false, 
-    ScanMode.QR
-    );
-    setState(() => ticket = code != '-1' ? code: 'Não validado');
-}
+  readQRCode() async {
+    String code = await FlutterBarcodeScanner.scanBarcode(
+        "#FFFFFF", "Cancelar", false, ScanMode.QR);
+    setState(() => ticket = code != '-1' ? code : 'Não validado');
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            appBar: AppBar(
+      appBar: AppBar(
         backgroundColor: Color(0xFF9e99e5),
         elevation: 1,
       ),
@@ -36,23 +31,23 @@ readQRCode() async{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-
           children: [
-            if(ticket != '')
-            Padding(padding: EdgeInsets.only(bottom:  24.0),
-            child: Text(
-              'Ticket: $ticket',
-              style: TextStyle(fontSize: 30.0),
+            if (ticket != '')
+              Padding(
+                padding: EdgeInsets.only(bottom: 24.0),
+                child: Text(
+                  'Ticket: $ticket',
+                  style: TextStyle(fontSize: 30.0),
+                ),
+              ),
+            ElevatedButton.icon(
+              onPressed: readQRCode,
+              icon: Icon(Icons.qr_code),
+              label: Text("Validar"),
             ),
-            ),
-            ElevatedButton.icon(onPressed: readQRCode,
-            icon: Icon(Icons.qr_code),
-            label: Text("Validar"),
-             ),
           ],
         ),
       ),
-
     );
   }
 }

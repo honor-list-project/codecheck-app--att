@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/cadastro.dart';
+import 'package:flutter_application_1/catalog.dart';
 import 'package:flutter_application_1/home.dart';
 import 'package:flutter_application_1/homeUsers.dart';
 import 'package:flutter_application_1/login.dart';
@@ -35,6 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
           // builder: (context)=> const MyEvents()));
           // builder: (context)=> const ViewEvent()));
           // builder: (context)=> const QrCodeValidation(status: false,)));
+          // builder: (context)=> const Catalog()));
     });
     
   }

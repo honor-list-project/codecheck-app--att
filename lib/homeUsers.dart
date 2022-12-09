@@ -19,253 +19,258 @@ class _HomeUsersState extends State<HomeUsers> {
     return Scaffold(
       // backgroundColor: Color.fromRGBO(184, 184, 255, 1),
       body: Container(
-        child: Column(
-          children: <Widget>[
-            // Fundo
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: 300,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                image: AssetImage('imagens/homeU.png'),
-                fit: BoxFit.fill,
-              )),
-              padding: EdgeInsets.only(top: 10),
-              child: Stack(
-                children: <Widget>[
-                  Positioned(
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              // Fundo
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: 300,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                  image: AssetImage('imagens/homeU.png'),
+                  fit: BoxFit.fill,
+                )),
+                padding: EdgeInsets.only(top: 10),
+                child: Stack(
+                  children: <Widget>[
+                    Positioned(
+                      child: Container(
+                        child: Center(
+                          child: Image.asset('imagens/logo.png'),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
+                      ),
+                      border: Border.all(width: 1.5, color: Color(0xffadb5bd)),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color(0xffadb5bd),
+                          offset: const Offset(
+                            2.0,
+                            2.0,
+                          ),
+                          blurRadius: 3.0,
+                          spreadRadius: 2.0,
+                        ), //BoxShadow
+                        BoxShadow(
+                          color: Color(0xffadb5bd),
+                          offset: const Offset(0.0, 0.0),
+                          blurRadius: 0.0,
+                          spreadRadius: 0.0,
+                        ), //BoxShadow
+                      ],
+                    ),
+                    width: 150,
+                    height: 150,
                     child: Container(
-                      child: Center(
-                        child: Image.asset('imagens/logo.png'),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          IconButton(
+                            iconSize: 48,
+                            icon: Icon(
+                              Icons.settings_outlined,
+                              color: Color(0xff827BE9),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Settings()),
+                              );
+                            },
+                          ),
+                          Text("Configurações",
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 17)),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
+                      ),
+                      border: Border.all(width: 1.5, color: Color(0xffadb5bd)),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color(0xffadb5bd),
+                          offset: const Offset(
+                            2.0,
+                            2.0,
+                          ),
+                          blurRadius: 3.0,
+                          spreadRadius: 2.0,
+                        ), //BoxShadow
+                        BoxShadow(
+                          color: Color(0xffadb5bd),
+                          offset: const Offset(0.0, 0.0),
+                          blurRadius: 0.0,
+                          spreadRadius: 0.0,
+                        ), //BoxShadow
+                      ],
+                    ),
+                    width: 150,
+                    height: 150,
+                    child: Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          IconButton(
+                            iconSize: 48,
+                            icon: Icon(
+                              Icons.confirmation_num_outlined,
+                              color: Color(0xff827BE9),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => MyEvents()),
+                              );
+                            },
+                          ),
+                          Text("Meus eventos",
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 17)),
+                        ],
                       ),
                     ),
                   ),
                 ],
               ),
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(10),
-                    ),
-                    border: Border.all(width: 1.5, color: Color(0xffadb5bd)),
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color(0xffadb5bd),
-                        offset: const Offset(
-                          2.0,
-                          2.0,
-                        ),
-                        blurRadius: 3.0,
-                        spreadRadius: 2.0,
-                      ), //BoxShadow
-                      BoxShadow(
-                        color: Color(0xffadb5bd),
-                        offset: const Offset(0.0, 0.0),
-                        blurRadius: 0.0,
-                        spreadRadius: 0.0,
-                      ), //BoxShadow
-                    ],
-                  ),
-                  width: 150,
-                  height: 150,
-                  child: Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        IconButton(
-                          iconSize: 48,
-                          icon: Icon(
-                            Icons.settings_outlined,
-                            color: Color(0xff827BE9),
+              SizedBox(
+                height: 23,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
+                      ),
+                      border: Border.all(width: 1.5, color: Color(0xffadb5bd)),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color(0xffadb5bd),
+                          offset: const Offset(
+                            2.0,
+                            2.0,
                           ),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Settings()),
-                            );
-                          },
-                        ),
-                        Text("Configurações",
-                            style:
-                                TextStyle(color: Colors.black, fontSize: 17)),
+                          blurRadius: 3.0,
+                          spreadRadius: 2.0,
+                        ), //BoxShadow
+                        BoxShadow(
+                          color: Color(0xffadb5bd),
+                          offset: const Offset(0.0, 0.0),
+                          blurRadius: 0.0,
+                          spreadRadius: 0.0,
+                        ), //BoxShadow
                       ],
                     ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(10),
-                    ),
-                    border: Border.all(width: 1.5, color: Color(0xffadb5bd)),
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color(0xffadb5bd),
-                        offset: const Offset(
-                          2.0,
-                          2.0,
-                        ),
-                        blurRadius: 3.0,
-                        spreadRadius: 2.0,
-                      ), //BoxShadow
-                      BoxShadow(
-                        color: Color(0xffadb5bd),
-                        offset: const Offset(0.0, 0.0),
-                        blurRadius: 0.0,
-                        spreadRadius: 0.0,
-                      ), //BoxShadow
-                    ],
-                  ),
-                  width: 150,
-                  height: 150,
-                  child: Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        IconButton(
-                          iconSize: 48,
-                          icon: Icon(
-                            Icons.confirmation_num_outlined,
-                            color: Color(0xff827BE9),
+                    width: 150,
+                    height: 150,
+                    child: Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          IconButton(
+                            iconSize: 48,
+                            icon: Icon(
+                              Icons.qr_code_2_outlined,
+                              color: Color(0xff827BE9),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => qrcode()),
+                              );
+                            },
                           ),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => MyEvents()),
-                            );
-                          },
-                        ),
-                        Text("Meus eventos",
-                            style:
-                                TextStyle(color: Colors.black, fontSize: 17)),
+                          Text("Ler QR Code",
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 20)),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
+                      ),
+                      border: Border.all(width: 1.5, color: Color(0xffadb5bd)),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color(0xffadb5bd),
+                          offset: const Offset(
+                            2.0,
+                            2.0,
+                          ),
+                          blurRadius: 3.0,
+                          spreadRadius: 2.0,
+                        ), //BoxShadow
+                        BoxShadow(
+                          color: Color(0xffadb5bd),
+                          offset: const Offset(0.0, 0.0),
+                          blurRadius: 0.0,
+                          spreadRadius: 0.0,
+                        ), //BoxShadow
                       ],
                     ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 23,
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(10),
-                    ),
-                    border: Border.all(width: 1.5, color: Color(0xffadb5bd)),
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color(0xffadb5bd),
-                        offset: const Offset(
-                          2.0,
-                          2.0,
-                        ),
-                        blurRadius: 3.0,
-                        spreadRadius: 2.0,
-                      ), //BoxShadow
-                      BoxShadow(
-                        color: Color(0xffadb5bd),
-                        offset: const Offset(0.0, 0.0),
-                        blurRadius: 0.0,
-                        spreadRadius: 0.0,
-                      ), //BoxShadow
-                    ],
-                  ),
-                  width: 150,
-                  height: 150,
-                  child: Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        IconButton(
-                          iconSize: 48,
-                          icon: Icon(
-                            Icons.qr_code_2_outlined,
-                            color: Color(0xff827BE9),
+                    width: 150,
+                    height: 150,
+                    child: Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          IconButton(
+                            iconSize: 48,
+                            icon: Icon(
+                              Icons.fact_check_outlined,
+                              color: Color(0xff827BE9),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Catalog()),
+                              );
+                            },
                           ),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => qrcode()),
-                            );
-                          },
-                        ),
-                        Text("Ler QR Code",
-                            style:
-                                TextStyle(color: Colors.black, fontSize: 20)),
-                      ],
+                          Text("Catálogo",
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 20)),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(10),
-                    ),
-                    border: Border.all(width: 1.5, color: Color(0xffadb5bd)),
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color(0xffadb5bd),
-                        offset: const Offset(
-                          2.0,
-                          2.0,
-                        ),
-                        blurRadius: 3.0,
-                        spreadRadius: 2.0,
-                      ), //BoxShadow
-                      BoxShadow(
-                        color: Color(0xffadb5bd),
-                        offset: const Offset(0.0, 0.0),
-                        blurRadius: 0.0,
-                        spreadRadius: 0.0,
-                      ), //BoxShadow
-                    ],
-                  ),
-                  width: 150,
-                  height: 150,
-                  child: Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        IconButton(
-                          iconSize: 48,
-                          icon: Icon(
-                            Icons.fact_check_outlined,
-                            color: Color(0xff827BE9),
-                          ),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Catalog()),
-                            );
-                          },
-                        ),
-                        Text("Catálogo",
-                            style:
-                                TextStyle(color: Colors.black, fontSize: 20)),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+              SizedBox(
+                height: 120,
+              )
+            ],
+          ),
         ),
       ),
       extendBody: true,

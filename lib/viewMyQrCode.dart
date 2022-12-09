@@ -25,99 +25,104 @@ class _ViewMyQrCodeState extends State<ViewMyQrCode> {
         backgroundColor: Color(0xFF9e99e5),
         elevation: 1,
       ),
-      body: Column(
-        children: [
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: 300,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-              image: AssetImage('imagens/image.png'),
-              fit: BoxFit.fill,
-            )),
-            child: Stack(
-              children: <Widget>[
-                Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Center(
-                        child: Container(
-                          width: 150,
-                          height: 150,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(100.0),
-                            image: DecorationImage(
-                              image: AssetImage('imagens/qr-code.png'),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 300,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                image: AssetImage('imagens/image.png'),
+                fit: BoxFit.fill,
+              )),
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Center(
+                          child: Container(
+                            width: 150,
+                            height: 150,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(100.0),
+                              image: DecorationImage(
+                                image: AssetImage('imagens/qr-code.png'),
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        height: 20.0,
-                      ),
-                      Center(
-                        child: Text(
-                          'LER QRCODE',
-                          style: TextStyle(
-                              fontSize: 30.0,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w300),
+                        SizedBox(
+                          height: 20.0,
                         ),
-                      ),
-                    ],
+                        Center(
+                          child: Text(
+                            'LER QRCODE',
+                            style: TextStyle(
+                                fontSize: 30.0,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w300),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ),
-          // Card
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(
-                Radius.circular(10),
-              ),
-              border: Border.all(width: 1.5, color: Color(0xffadb5bd)),
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  color: Color(0xffadb5bd),
-                  offset: const Offset(
-                    2.0,
-                    2.0,
-                  ),
-                  blurRadius: 3.0,
-                  spreadRadius: 2.0,
-                ), //BoxShadow
-                BoxShadow(
-                  color: Color(0xffadb5bd),
-                  offset: const Offset(0.0, 0.0),
-                  blurRadius: 0.0,
-                  spreadRadius: 0.0,
-                ), //BoxShadow
-              ],
-            ),
-            // width: MediaQuery.of(context).size.width * 0.9,
-            // height: MediaQuery.of(context).size.width * 0.9,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                width: 250,
-                height: 250,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  // image: DecorationImage(
-                  //   image: AssetImage('imagens/view-qr-code.png'),
-                  // ),
-                ),
-                child: QrImage(
-                  data: dataQr,
-                ),
+                ],
               ),
             ),
-          ),
-        ],
+            // Card
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10),
+                ),
+                border: Border.all(width: 1.5, color: Color(0xffadb5bd)),
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0xffadb5bd),
+                    offset: const Offset(
+                      2.0,
+                      2.0,
+                    ),
+                    blurRadius: 3.0,
+                    spreadRadius: 2.0,
+                  ), //BoxShadow
+                  BoxShadow(
+                    color: Color(0xffadb5bd),
+                    offset: const Offset(0.0, 0.0),
+                    blurRadius: 0.0,
+                    spreadRadius: 0.0,
+                  ), //BoxShadow
+                ],
+              ),
+              // width: MediaQuery.of(context).size.width * 0.9,
+              // height: MediaQuery.of(context).size.width * 0.9,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  width: 250,
+                  height: 250,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    // image: DecorationImage(
+                    //   image: AssetImage('imagens/view-qr-code.png'),
+                    // ),
+                  ),
+                  child: QrImage(
+                    data: dataQr,
+                  ),
+                ),
+              ),
+            ),
+                        SizedBox(
+              height: 120,
+            ),
+          ],
+        ),
       ),
       extendBody: true,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
