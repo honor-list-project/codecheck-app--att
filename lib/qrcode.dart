@@ -27,6 +27,10 @@ readQRCode() async{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+            appBar: AppBar(
+        backgroundColor: Color(0xFF9e99e5),
+        elevation: 1,
+      ),
       body: Container(
         width: MediaQuery.of(context).size.width,
         child: Column(

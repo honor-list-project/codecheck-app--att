@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_1/homeUsers.dart';
+import 'package:flutter_application_1/settingsProfile.dart';
+import 'package:flutter_application_1/viewMyQrCode.dart';
 
 class Settings extends StatefulWidget {
   const Settings({super.key});
@@ -15,6 +17,10 @@ class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFF9e99e5),
+        elevation: 1,
+      ),
       body: Column(
         children: [
           // Fundo
@@ -94,7 +100,13 @@ class _SettingsState extends State<Settings> {
                 child: Column(
                   children: [
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SettingsProfile()),
+                        );
+                      },
                       child: Container(
                         decoration: BoxDecoration(
                           border: Border(
@@ -125,7 +137,13 @@ class _SettingsState extends State<Settings> {
                       height: 30.0,
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ViewMyQrCode()),
+                        );
+                      },
                       child: Container(
                         decoration: BoxDecoration(
                           border: Border(

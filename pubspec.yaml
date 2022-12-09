@@ -40,6 +40,7 @@ dependencies:
   flutter_barcode_scanner: ^2.0.0
   email_validator: ^2.1.17
   dio: ^4.0.6
+  qr_flutter: ^4.0.0
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +70,9 @@ flutter:
     - imagens/partebaixo.png
     - imagens/partecima.png
     - imagens/homeU.png
+    - imagens/qr-code.png
+    - imagens/view-qr-code.png
+    - imagens/event-x.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
