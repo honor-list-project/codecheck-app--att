@@ -118,7 +118,7 @@ class _ViewMyQrCodeState extends State<ViewMyQrCode> {
                 ),
               ),
             ),
-                        SizedBox(
+            SizedBox(
               height: 120,
             ),
           ],

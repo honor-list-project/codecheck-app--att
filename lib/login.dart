@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/cadastro.dart';
 import 'package:flutter_application_1/data/userController.dart';
+import 'package:flutter_application_1/homeUsers.dart';
 import 'package:flutter_application_1/model/user.dart';
 import 'package:flutter_application_1/values/preferences.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -209,19 +210,26 @@ class _LoginState extends State<Login> {
   void _fazerLogin(context) async {
     String emailForm = _controllerEmail.text;
     String senhaForm = _controllerSenha.text;
+    
+    // CODIGO MENCINADO NO COMENTARIO ABAIXO
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => HomeUsers()),
+    );
 
-    bool loginAuth = await controller.loginAuth(emailForm, senhaForm);
-    if (loginAuth) {
-      msgError = false;
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => Cadastro()),
-      );
-    } else {
-      setState(() {
-        msgError = true;
-      });
-    }
+    // CASO QUEIRA UTILIZAR A API DESCOMENTE ABAIXO E REMOVA O CODIGO CITADO ACIMA
+    // bool loginAuth = await controller.loginAuth(emailForm, senhaForm);
+    // if (loginAuth) {
+    //   msgError = false;
+    //   Navigator.push(
+    //     context,
+    //     MaterialPageRoute(builder: (context) => HomeUsers()),
+    //   );
+    // } else {
+    //   setState(() {
+    //     msgError = true;
+    //   });
+    // }
   }
 
   // Future<bool> _getsavedUser() async {

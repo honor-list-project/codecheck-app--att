@@ -347,16 +347,23 @@ class _CadastroState extends State<Cadastro> {
       telefone: _controllerFone.text,
     );
 
-    bool cadastroUser = await controller.cadastroUser(newUser);
-    if(cadastroUser == true){
-      msgError = false;
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => HomeUsers()),
-      );
-    }else{
-      msgError = true;
-      print('não registrado');
-    }
+    // CODIGO MENCINADO NO COMENTARIO ABAIXO
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => HomeUsers()),
+    );
+
+    // CASO QUEIRA UTILIZAR A API DESCOMENTE ABAIXO E REMOVA O CODIGO CITADO ACIMA
+    // bool cadastroUser = await controller.cadastroUser(newUser);
+    // if(cadastroUser == true){
+    //   msgError = false;
+    //   Navigator.push(
+    //     context,
+    //     MaterialPageRoute(builder: (context) => HomeUsers()),
+    //   );
+    // }else{
+    //   msgError = true;
+    //   print('não registrado');
+    // }
   }
 }

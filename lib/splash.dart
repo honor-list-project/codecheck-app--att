@@ -7,6 +7,7 @@ import 'package:flutter_application_1/homeUsers.dart';
 import 'package:flutter_application_1/login.dart';
 import 'package:flutter_application_1/main.dart';
 import 'package:flutter_application_1/myEvents.dart';
+import 'package:flutter_application_1/notifications.dart';
 import 'package:flutter_application_1/qrCodeValidation.dart';
 import 'package:flutter_application_1/settings.dart';
 import 'package:flutter_application_1/settingsProfile.dart';
@@ -37,6 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
           // builder: (context)=> const ViewEvent()));
           // builder: (context)=> const QrCodeValidation(status: false,)));
           // builder: (context)=> const Catalog()));
+          // builder: (context)=> const Notifications()));
     });
     
   }

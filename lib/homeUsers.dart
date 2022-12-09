@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/catalog.dart';
 import 'package:flutter_application_1/home.dart';
 import 'package:flutter_application_1/myEvents.dart';
+import 'package:flutter_application_1/notifications.dart';
 import 'package:flutter_application_1/qrcode.dart';
 import 'package:flutter_application_1/settings.dart';
 
@@ -201,7 +202,8 @@ class _HomeUsersState extends State<HomeUsers> {
                             onPressed: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => qrcode()),
+                                MaterialPageRoute(
+                                    builder: (context) => qrcode()),
                               );
                             },
                           ),
@@ -304,7 +306,12 @@ class _HomeUsersState extends State<HomeUsers> {
                   ),
                 ),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Notifications()),
+                    );
+                  },
                   icon: Icon(
                     Icons.notifications_outlined,
                     size: 30,
