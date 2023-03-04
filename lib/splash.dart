@@ -25,40 +25,44 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 1), (){
+    Timer(const Duration(seconds: 1), () {
       Navigator.pushReplacement(
-        context, MaterialPageRoute(
-          // builder: (context)=> const Login()));
-          // builder: (context)=> const Cadastro()));
-          builder: (context)=> const HomeUsers()));
-          // builder: (context)=> const Settings()));
-          // builder: (context)=> const SettingsProfile()));
-          // builder: (context)=> const ViewMyQrCode()));
-          // builder: (context)=> const MyEvents()));
-          // builder: (context)=> const ViewEvent()));
-          // builder: (context)=> const QrCodeValidation(status: false,)));
-          // builder: (context)=> const Catalog()));
-          // builder: (context)=> const Notifications()));
+          context,
+          MaterialPageRoute(
+              // builder: (context)=> const Login()));
+              // builder: (context)=> const Cadastro()));
+              builder: (context) => const HomeUsers()));
+      // builder: (context)=> const Settings()));
+      // builder: (context)=> const SettingsProfile()));
+      // builder: (context)=> const ViewMyQrCode()));
+      // builder: (context)=> const MyEvents()));
+      // builder: (context)=> const ViewEvent()));
+      // builder: (context)=> const QrCodeValidation(status: false,)));
+      // builder: (context)=> const Catalog()));
+      // builder: (context)=> const Notifications()));
     });
-    
   }
 
-    @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 5.0,),
-            Image.asset('imagens/image.png'),
-             Text('C O D E    C H E C K',
-            style: TextStyle(
-              fontSize: 22.0,
-            ),),
+            SizedBox(
+              height: 5.0,
+            ),
+            Image.asset('imagens/logo.png'),
+            Text(
+              'C O D E    C H E C K',
+              style: TextStyle(
+                fontSize: 22.0,
+              ),
+            ),
           ],
         ),
       ),
     );
   }
-  }
+}

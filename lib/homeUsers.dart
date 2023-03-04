@@ -6,6 +6,7 @@ import 'package:flutter_application_1/myEvents.dart';
 import 'package:flutter_application_1/notifications.dart';
 import 'package:flutter_application_1/qrcode.dart';
 import 'package:flutter_application_1/settings.dart';
+import 'package:flutter_application_1/utils/AppColors.dart';
 
 class HomeUsers extends StatefulWidget {
   const HomeUsers({Key? key}) : super(key: key);
@@ -84,7 +85,7 @@ class _HomeUsersState extends State<HomeUsers> {
                             iconSize: 48,
                             icon: Icon(
                               Icons.settings_outlined,
-                              color: Color(0xff827BE9),
+                              color: AppColors.tercColor,
                             ),
                             onPressed: () {
                               Navigator.push(
@@ -95,8 +96,8 @@ class _HomeUsersState extends State<HomeUsers> {
                             },
                           ),
                           Text("Configurações",
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 17)),
+                              style: TextStyle(
+                                  color: AppColors.textColor, fontSize: 17)),
                         ],
                       ),
                     ),
@@ -136,7 +137,7 @@ class _HomeUsersState extends State<HomeUsers> {
                             iconSize: 48,
                             icon: Icon(
                               Icons.confirmation_num_outlined,
-                              color: Color(0xff827BE9),
+                              color: AppColors.tercColor,
                             ),
                             onPressed: () {
                               Navigator.push(
@@ -147,8 +148,8 @@ class _HomeUsersState extends State<HomeUsers> {
                             },
                           ),
                           Text("Meus eventos",
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 17)),
+                              style: TextStyle(
+                                  color: AppColors.textColor, fontSize: 17)),
                         ],
                       ),
                     ),
@@ -197,7 +198,7 @@ class _HomeUsersState extends State<HomeUsers> {
                             iconSize: 48,
                             icon: Icon(
                               Icons.qr_code_2_outlined,
-                              color: Color(0xff827BE9),
+                              color: AppColors.tercColor,
                             ),
                             onPressed: () {
                               Navigator.push(
@@ -208,8 +209,8 @@ class _HomeUsersState extends State<HomeUsers> {
                             },
                           ),
                           Text("Ler QR Code",
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 20)),
+                              style: TextStyle(
+                                  color: AppColors.textColor, fontSize: 20)),
                         ],
                       ),
                     ),
@@ -249,7 +250,7 @@ class _HomeUsersState extends State<HomeUsers> {
                             iconSize: 48,
                             icon: Icon(
                               Icons.fact_check_outlined,
-                              color: Color(0xff827BE9),
+                              color: AppColors.tercColor,
                             ),
                             onPressed: () {
                               Navigator.push(
@@ -260,8 +261,8 @@ class _HomeUsersState extends State<HomeUsers> {
                             },
                           ),
                           Text("Catálogo",
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 20)),
+                              style: TextStyle(
+                                  color: AppColors.textColor, fontSize: 20)),
                         ],
                       ),
                     ),
@@ -279,7 +280,7 @@ class _HomeUsersState extends State<HomeUsers> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Color(0xff827BE9),
+        backgroundColor: AppColors.tercColor,
         onPressed: () {
           Navigator.push(
             context,
@@ -290,7 +291,7 @@ class _HomeUsersState extends State<HomeUsers> {
       ),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
-        color: Color(0xff827BE9),
+        color: AppColors.tercColor,
         child: IconTheme(
           data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
           child: Padding(
